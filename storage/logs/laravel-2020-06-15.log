@@ -1,0 +1,344 @@
+[2020-06-15 14:41:24] local.ERROR: SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes (SQL: alter table `users` add unique `users_email_unique`(`email`)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42000): SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes (SQL: alter table `users` add unique `users_email_unique`(`email`)) at F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:664, PDOException(code: 42000): SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes at F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:458)
+[stacktrace]
+#0 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('alter table `us...', Array, Object(Closure))
+#1 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(459): Illuminate\\Database\\Connection->run('alter table `us...', Array, Object(Closure))
+#2 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Blueprint.php(97): Illuminate\\Database\\Connection->statement('alter table `us...')
+#3 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(278): Illuminate\\Database\\Schema\\Blueprint->build(Object(Illuminate\\Database\\MySqlConnection), Object(Illuminate\\Database\\Schema\\Grammars\\MySqlGrammar))
+#4 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(167): Illuminate\\Database\\Schema\\Builder->build(Object(Illuminate\\Database\\Schema\\Blueprint))
+#5 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(239): Illuminate\\Database\\Schema\\Builder->create('users', Object(Closure))
+#6 F:\\blog\\database\\migrations\\2014_10_12_000000_create_users_table.php(24): Illuminate\\Support\\Facades\\Facade::__callStatic('create', Array)
+#7 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(387): CreateUsersTable->up()
+#8 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(396): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#9 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(197): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(CreateUsersTable), 'up')
+#10 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(162): Illuminate\\Database\\Migrations\\Migrator->runUp('F:\\\\blog\\\\databas...', 1, false)
+#11 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(109): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#12 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(71): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#13 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#14 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Array, Array)
+#15 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#17 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(576): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#18 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(183): Illuminate\\Container\\Container->call(Array)
+#19 F:\\blog\\vendor\\symfony\\console\\Command\\Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#20 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#21 F:\\blog\\vendor\\symfony\\console\\Application.php(1000): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#22 F:\\blog\\vendor\\symfony\\console\\Application.php(271): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 F:\\blog\\vendor\\symfony\\console\\Application.php(147): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(90): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(133): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 F:\\blog\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 {main}
+"} 
+[2020-06-15 14:42:12] local.ERROR: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists (SQL: create table `users` (`id` bigint unsigned not null auto_increment primary key, `name` varchar(255) not null, `email` varchar(255) not null, `email_verified_at` timestamp null, `password` varchar(255) not null, `remember_token` varchar(100) null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists (SQL: create table `users` (`id` bigint unsigned not null auto_increment primary key, `name` varchar(255) not null, `email` varchar(255) not null, `email_verified_at` timestamp null, `password` varchar(255) not null, `remember_token` varchar(100) null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') at F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:664, PDOException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists at F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:458)
+[stacktrace]
+#0 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('create table `u...', Array, Object(Closure))
+#1 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(459): Illuminate\\Database\\Connection->run('create table `u...', Array, Object(Closure))
+#2 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Blueprint.php(97): Illuminate\\Database\\Connection->statement('create table `u...')
+#3 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(278): Illuminate\\Database\\Schema\\Blueprint->build(Object(Illuminate\\Database\\MySqlConnection), Object(Illuminate\\Database\\Schema\\Grammars\\MySqlGrammar))
+#4 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(167): Illuminate\\Database\\Schema\\Builder->build(Object(Illuminate\\Database\\Schema\\Blueprint))
+#5 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(239): Illuminate\\Database\\Schema\\Builder->create('users', Object(Closure))
+#6 F:\\blog\\database\\migrations\\2014_10_12_000000_create_users_table.php(24): Illuminate\\Support\\Facades\\Facade::__callStatic('create', Array)
+#7 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(387): CreateUsersTable->up()
+#8 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(396): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#9 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(197): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(CreateUsersTable), 'up')
+#10 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(162): Illuminate\\Database\\Migrations\\Migrator->runUp('F:\\\\blog\\\\databas...', 1, false)
+#11 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(109): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#12 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(71): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#13 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#14 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Array, Array)
+#15 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#17 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(576): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#18 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(183): Illuminate\\Container\\Container->call(Array)
+#19 F:\\blog\\vendor\\symfony\\console\\Command\\Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#20 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#21 F:\\blog\\vendor\\symfony\\console\\Application.php(1000): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#22 F:\\blog\\vendor\\symfony\\console\\Application.php(271): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 F:\\blog\\vendor\\symfony\\console\\Application.php(147): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(90): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(133): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 F:\\blog\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 {main}
+"} 
+[2020-06-15 14:43:07] local.ERROR: There are no commands defined in the "refresh" namespace. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"refresh\" namespace. at F:\\blog\\vendor\\symfony\\console\\Application.php:597)
+[stacktrace]
+#0 F:\\blog\\vendor\\symfony\\console\\Application.php(650): Symfony\\Component\\Console\\Application->findNamespace('refresh')
+#1 F:\\blog\\vendor\\symfony\\console\\Application.php(235): Symfony\\Component\\Console\\Application->find('refresh:migrate')
+#2 F:\\blog\\vendor\\symfony\\console\\Application.php(147): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(90): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(133): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 F:\\blog\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 {main}
+"} 
+[2020-06-15 14:43:19] local.ERROR: SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists (SQL: create table `users` (`id` bigint unsigned not null auto_increment primary key, `name` varchar(255) not null, `email` varchar(255) not null, `email_verified_at` timestamp null, `password` varchar(255) not null, `remember_token` varchar(100) null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists (SQL: create table `users` (`id` bigint unsigned not null auto_increment primary key, `name` varchar(255) not null, `email` varchar(255) not null, `email_verified_at` timestamp null, `password` varchar(255) not null, `remember_token` varchar(100) null, `created_at` timestamp null, `updated_at` timestamp null) default character set utf8mb4 collate 'utf8mb4_unicode_ci') at F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:664, PDOException(code: 42S01): SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' already exists at F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:458)
+[stacktrace]
+#0 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('create table `u...', Array, Object(Closure))
+#1 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(459): Illuminate\\Database\\Connection->run('create table `u...', Array, Object(Closure))
+#2 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Blueprint.php(97): Illuminate\\Database\\Connection->statement('create table `u...')
+#3 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(278): Illuminate\\Database\\Schema\\Blueprint->build(Object(Illuminate\\Database\\MySqlConnection), Object(Illuminate\\Database\\Schema\\Grammars\\MySqlGrammar))
+#4 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(167): Illuminate\\Database\\Schema\\Builder->build(Object(Illuminate\\Database\\Schema\\Blueprint))
+#5 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(239): Illuminate\\Database\\Schema\\Builder->create('users', Object(Closure))
+#6 F:\\blog\\database\\migrations\\2014_10_12_000000_create_users_table.php(24): Illuminate\\Support\\Facades\\Facade::__callStatic('create', Array)
+#7 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(387): CreateUsersTable->up()
+#8 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(396): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#9 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(197): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(CreateUsersTable), 'up')
+#10 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(162): Illuminate\\Database\\Migrations\\Migrator->runUp('F:\\\\blog\\\\databas...', 1, false)
+#11 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(109): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#12 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(71): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#13 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#14 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Array, Array)
+#15 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#17 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(576): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#18 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(183): Illuminate\\Container\\Container->call(Array)
+#19 F:\\blog\\vendor\\symfony\\console\\Command\\Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Illuminate\\Console\\OutputStyle))
+#20 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Illuminate\\Console\\OutputStyle))
+#21 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(198): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArrayInput), Object(Illuminate\\Console\\OutputStyle))
+#22 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\RefreshCommand.php(60): Illuminate\\Console\\Command->call('migrate', Array)
+#23 [internal function]: Illuminate\\Database\\Console\\Migrations\\RefreshCommand->handle()
+#24 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Array, Array)
+#25 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#26 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#27 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(576): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#28 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(183): Illuminate\\Container\\Container->call(Array)
+#29 F:\\blog\\vendor\\symfony\\console\\Command\\Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#30 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#31 F:\\blog\\vendor\\symfony\\console\\Application.php(1000): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#32 F:\\blog\\vendor\\symfony\\console\\Application.php(271): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\RefreshCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#33 F:\\blog\\vendor\\symfony\\console\\Application.php(147): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#34 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(90): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#35 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(133): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#36 F:\\blog\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#37 {main}
+"} 
+[2020-06-15 14:44:15] local.ERROR: SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes (SQL: alter table `users` add unique `users_email_unique`(`email`)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42000): SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes (SQL: alter table `users` add unique `users_email_unique`(`email`)) at F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:664, PDOException(code: 42000): SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767 bytes at F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:458)
+[stacktrace]
+#0 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('alter table `us...', Array, Object(Closure))
+#1 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(459): Illuminate\\Database\\Connection->run('alter table `us...', Array, Object(Closure))
+#2 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Blueprint.php(97): Illuminate\\Database\\Connection->statement('alter table `us...')
+#3 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(278): Illuminate\\Database\\Schema\\Blueprint->build(Object(Illuminate\\Database\\MySqlConnection), Object(Illuminate\\Database\\Schema\\Grammars\\MySqlGrammar))
+#4 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Schema\\Builder.php(167): Illuminate\\Database\\Schema\\Builder->build(Object(Illuminate\\Database\\Schema\\Blueprint))
+#5 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(239): Illuminate\\Database\\Schema\\Builder->create('users', Object(Closure))
+#6 F:\\blog\\database\\migrations\\2014_10_12_000000_create_users_table.php(24): Illuminate\\Support\\Facades\\Facade::__callStatic('create', Array)
+#7 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(387): CreateUsersTable->up()
+#8 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(396): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#9 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(197): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(CreateUsersTable), 'up')
+#10 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(162): Illuminate\\Database\\Migrations\\Migrator->runUp('F:\\\\blog\\\\databas...', 1, false)
+#11 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Migrations\\Migrator.php(109): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#12 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Console\\Migrations\\MigrateCommand.php(71): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#13 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#14 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Array, Array)
+#15 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#17 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(576): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#18 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(183): Illuminate\\Container\\Container->call(Array)
+#19 F:\\blog\\vendor\\symfony\\console\\Command\\Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#20 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#21 F:\\blog\\vendor\\symfony\\console\\Application.php(1000): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#22 F:\\blog\\vendor\\symfony\\console\\Application.php(271): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 F:\\blog\\vendor\\symfony\\console\\Application.php(147): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(90): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(133): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 F:\\blog\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 {main}
+"} 
+[2020-06-15 15:21:37] local.ERROR: Command "make" is not defined.
+
+Did you mean one of these?
+    make:auth
+    make:channel
+    make:command
+    make:controller
+    make:event
+    make:exception
+    make:factory
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:observer
+    make:policy
+    make:provider
+    make:request
+    make:resource
+    make:rule
+    make:seeder
+    make:test {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"make\" is not defined.
+
+Did you mean one of these?
+    make:auth
+    make:channel
+    make:command
+    make:controller
+    make:event
+    make:exception
+    make:factory
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:observer
+    make:policy
+    make:provider
+    make:request
+    make:resource
+    make:rule
+    make:seeder
+    make:test at F:\\blog\\vendor\\symfony\\console\\Application.php:669)
+[stacktrace]
+#0 F:\\blog\\vendor\\symfony\\console\\Application.php(235): Symfony\\Component\\Console\\Application->find('make')
+#1 F:\\blog\\vendor\\symfony\\console\\Application.php(147): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(90): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(133): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 F:\\blog\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2020-06-15 15:25:37] local.ERROR: Command "make" is not defined.
+
+Did you mean one of these?
+    make:auth
+    make:channel
+    make:command
+    make:controller
+    make:event
+    make:exception
+    make:factory
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:observer
+    make:policy
+    make:provider
+    make:request
+    make:resource
+    make:rule
+    make:seeder
+    make:test {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"make\" is not defined.
+
+Did you mean one of these?
+    make:auth
+    make:channel
+    make:command
+    make:controller
+    make:event
+    make:exception
+    make:factory
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:observer
+    make:policy
+    make:provider
+    make:request
+    make:resource
+    make:rule
+    make:seeder
+    make:test at F:\\blog\\vendor\\symfony\\console\\Application.php:669)
+[stacktrace]
+#0 F:\\blog\\vendor\\symfony\\console\\Application.php(235): Symfony\\Component\\Console\\Application->find('make')
+#1 F:\\blog\\vendor\\symfony\\console\\Application.php(147): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(90): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(133): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 F:\\blog\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2020-06-15 15:58:17] local.ERROR: Invalid route action: [App\Http\Controllers\CategoriesController]. {"exception":"[object] (UnexpectedValueException(code: 0): Invalid route action: [App\\Http\\Controllers\\CategoriesController]. at F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteAction.php:89)
+[stacktrace]
+#0 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteAction.php(46): Illuminate\\Routing\\RouteAction::makeInvokable('App\\\\Http\\\\Contro...')
+#1 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(162): Illuminate\\Routing\\RouteAction::parse('categories', Array)
+#2 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(141): Illuminate\\Routing\\Route->parseAction(Array)
+#3 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(547): Illuminate\\Routing\\Route->__construct(Array, 'categories', Array)
+#4 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(466): Illuminate\\Routing\\Router->newRoute(Array, 'categories', Array)
+#5 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(445): Illuminate\\Routing\\Router->createRoute(Array, '/categories', Array)
+#6 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(144): Illuminate\\Routing\\Router->addRoute(Array, '/categories', 'CategoriesContr...')
+#7 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(239): Illuminate\\Routing\\Router->get('/categories', 'CategoriesContr...')
+#8 F:\\blog\outes\\web.php(21): Illuminate\\Support\\Facades\\Facade::__callStatic('get', Array)
+#9 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteFileRegistrar.php(35): require('F:\\\\blog\\\outes\\\\...')
+#10 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(415): Illuminate\\Routing\\RouteFileRegistrar->register('F:\\\\blog\\\outes/...')
+#11 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(373): Illuminate\\Routing\\Router->loadRoutes('F:\\\\blog\\\outes/...')
+#12 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteRegistrar.php(121): Illuminate\\Routing\\Router->group(Array, 'F:\\\\blog\\\outes/...')
+#13 F:\\blog\\app\\Providers\\RouteServiceProvider.php(56): Illuminate\\Routing\\RouteRegistrar->group('F:\\\\blog\\\outes/...')
+#14 F:\\blog\\app\\Providers\\RouteServiceProvider.php(40): App\\Providers\\RouteServiceProvider->mapWebRoutes()
+#15 [internal function]: App\\Providers\\RouteServiceProvider->map()
+#16 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Array, Array)
+#17 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#18 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#19 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(576): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#20 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider.php(87): Illuminate\\Container\\Container->call(Array)
+#21 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#22 F:\\blog\\app\\Providers\\RouteServiceProvider.php(28): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->boot()
+#23 [internal function]: App\\Providers\\RouteServiceProvider->boot()
+#24 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Array, Array)
+#25 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#26 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#27 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(576): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#28 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(827): Illuminate\\Container\\Container->call(Array)
+#29 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(810): Illuminate\\Foundation\\Application->bootProvider(Object(App\\Providers\\RouteServiceProvider))
+#30 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(App\\Providers\\RouteServiceProvider), 20)
+#31 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(811): array_walk(Array, Object(Closure))
+#32 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#33 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(210): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#34 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(162): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#35 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(146): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#36 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#37 F:\\blog\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#38 F:\\blog\\server.php(21): require_once('F:\\\\blog\\\\public\\\\...')
+#39 {main}
+"} 
+[2020-06-15 15:59:05] local.ERROR: Invalid route action: [App\Http\Controllers\CategoriesController]. {"exception":"[object] (UnexpectedValueException(code: 0): Invalid route action: [App\\Http\\Controllers\\CategoriesController]. at F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteAction.php:89)
+[stacktrace]
+#0 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteAction.php(46): Illuminate\\Routing\\RouteAction::makeInvokable('App\\\\Http\\\\Contro...')
+#1 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(162): Illuminate\\Routing\\RouteAction::parse('categories', Array)
+#2 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(141): Illuminate\\Routing\\Route->parseAction(Array)
+#3 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(547): Illuminate\\Routing\\Route->__construct(Array, 'categories', Array)
+#4 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(466): Illuminate\\Routing\\Router->newRoute(Array, 'categories', Array)
+#5 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(445): Illuminate\\Routing\\Router->createRoute(Array, '/categories', Array)
+#6 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(144): Illuminate\\Routing\\Router->addRoute(Array, '/categories', 'CategoriesContr...')
+#7 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(239): Illuminate\\Routing\\Router->get('/categories', 'CategoriesContr...')
+#8 F:\\blog\outes\\web.php(21): Illuminate\\Support\\Facades\\Facade::__callStatic('get', Array)
+#9 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteFileRegistrar.php(35): require('F:\\\\blog\\\outes\\\\...')
+#10 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(415): Illuminate\\Routing\\RouteFileRegistrar->register('F:\\\\blog\\\outes/...')
+#11 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(373): Illuminate\\Routing\\Router->loadRoutes('F:\\\\blog\\\outes/...')
+#12 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteRegistrar.php(121): Illuminate\\Routing\\Router->group(Array, 'F:\\\\blog\\\outes/...')
+#13 F:\\blog\\app\\Providers\\RouteServiceProvider.php(56): Illuminate\\Routing\\RouteRegistrar->group('F:\\\\blog\\\outes/...')
+#14 F:\\blog\\app\\Providers\\RouteServiceProvider.php(40): App\\Providers\\RouteServiceProvider->mapWebRoutes()
+#15 [internal function]: App\\Providers\\RouteServiceProvider->map()
+#16 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Array, Array)
+#17 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#18 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#19 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(576): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#20 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider.php(87): Illuminate\\Container\\Container->call(Array)
+#21 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider.php(36): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->loadRoutes()
+#22 F:\\blog\\app\\Providers\\RouteServiceProvider.php(28): Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider->boot()
+#23 [internal function]: App\\Providers\\RouteServiceProvider->boot()
+#24 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(32): call_user_func_array(Array, Array)
+#25 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(90): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#26 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#27 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(576): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#28 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(827): Illuminate\\Container\\Container->call(Array)
+#29 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(810): Illuminate\\Foundation\\Application->bootProvider(Object(App\\Providers\\RouteServiceProvider))
+#30 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(App\\Providers\\RouteServiceProvider), 20)
+#31 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(811): array_walk(Array, Object(Closure))
+#32 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#33 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(210): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#34 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(162): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#35 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(146): Illuminate\\Foundation\\Http\\Kernel->bootstrap()
+#36 F:\\blog\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#37 F:\\blog\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#38 F:\\blog\\server.php(21): require_once('F:\\\\blog\\\\public\\\\...')
+#39 {main}
+"} 
