@@ -61,11 +61,12 @@ class CategoriesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Categories  $categories
+     * @param int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categories $categories)
+    public function edit($id)
     {
+        $categories = Categories::find($id);
         return view('categories.create')->with('categories',$categories);
     }
 
