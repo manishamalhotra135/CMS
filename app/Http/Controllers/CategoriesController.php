@@ -87,13 +87,16 @@ class CategoriesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Categories  $categories
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categories $categories)
-    { 
-        $categories->delete();
-        session()->flash('success','Category Deleted Successfully');
+    public function destroy($id)
+    {
+        $categories = Categories::find($id);
+        if($categories){
+            $categories->delete();
+            session()->flash('success','Category Deleted Successfully');
+        }
         return redirect(route('categories.index'));
     }
 }
